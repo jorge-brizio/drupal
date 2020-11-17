@@ -1,9 +1,10 @@
-   # Migrate date fields with a date start and date end from Drupal 7 to date range  field Drupal 8.
+   # Migrate date Drupal 7 to date range Drupal 8.
 
-Usage:
-Add a mapping to your Drupal 8 daterange field 
+##### Usage:
+Add the mapping
+
+In this example we map a field called field_start_date:
 ```
-# Example: 
   field_start_date:
       plugin: date_range
       source: field_start_date
@@ -24,22 +25,22 @@ Disabling/enabling your migrate module will do.
 
 Run your migration and check the migrated values.
 
-Drupal 7
-```  
- field_start_date_value	field_start_date_value2
- 2020-09-07T00:00:00	2020-09-07T00:00:00
- 2020-10-26T00:00:00	2020-10-27T00:00:00
+>> Drupal 7
 
-```
+| field_start_date_value | field_start_date_value2 |
+| ----------------------- |  --------------------- |
+| 2020-09-07T00:00:00     |  2020-09-07T00:00:00   |
+| 2020-10-26T00:00:00	  |  2020-10-27T00:00:00   |
 
-Drupal 8
+>> Drupal 8
+ 
+| field_start_date_value |	field_start_date_end_value |
+| ----------------------- | -------------------------- |
+| 2020-09-07T00:00:00 | 	2020-09-07T00:00:00 |
+| 2020-10-26T00:00:00	|    2020-10-27T00:00:00 |
 
-```  
-field_start_date_value	field_start_date_end_value
-2020-09-07T00:00:00	2020-09-07T00:00:00
-2020-10-26T00:00:00	2020-10-27T00:00:00
-```
 
 ***
-* You can extend the plugin to convert dates or do additional processing.
+* Extend the plugin to fit your needs, convert between dates or 
+do additional processing.
 ***
